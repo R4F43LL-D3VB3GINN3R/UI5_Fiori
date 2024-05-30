@@ -4,4 +4,5 @@
 003 - Create a package.json: /Terminal/npm init --yes
 004 - Generate the ui5.yaml file: /Terminal/ui5 init
 005 - In the Project Folder, create a file named manifest.json
+006 - Fill manifest.json with the code snippet in this page: https://help.sap.com/doc/saphelp_snc700_ehp04/7.0.4/de-DE/3a/9babace121497abea8f0ea66e156d9/content.htm?no_cache=true
 005 - Install Dependencies: 
