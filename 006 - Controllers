@@ -2,7 +2,7 @@
 App.view.xml
 
 <mvc:View
-    controllerName="sap.ui.core.walkthrough.controller.App"
+    controllerName="sap.ui.demo.walkthrough.controller.App"         
     xmlns="sap.m" 
     xmlns:mvc="sap.ui.core.mvc">
 
