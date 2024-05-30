@@ -47,5 +47,19 @@ sap.ui.define([
     });
 });
 
-----------------------------------------------------------------------------------------------------------------------------
+//sap.ui.define([ "sap/ui/core/mvc/Controller" ]): This is the definition of a SAP UI5 module using the sap.ui.define function. 
+The array ["sap/ui/core/mvc/Controller"] lists the dependencies for this module. 
+Here, the module depends on the Controller class from the sap.ui.core.mvc library.
 
+//"use strict";: This directive is used to enable strict mode in JavaScript. 
+Strict mode helps catch common coding errors and "unsafe" actions, such as defining global variables accidentally.
+
+//return Controller.extend("sap.ui.demo.walkthrough.controller.App", {:This line extends the base Controller class to create a new controller class.
+The string "sap.ui.demo.walkthrough.controller.App" is the full name of the new controller class. 
+This name should match the controller name specified in the XML view.The second argument is an object that contains the methods and properties of the new controller.
+
+//onShowHello: function() {:This defines a method named onShowHello in the new controller. 
+This method will be called when the button's press event is triggered in the view.
+
+//alert("Hello Again");:This line of code will display a browser alert dialog with the message "Hello Again" when the onShowHello method is called.
+----------------------------------------------------------------------------------------------------------------------------
