@@ -1,2 +1,55 @@
 001 - In the webapp folder, create a new folder and name it with view.
 002 - Inside view folder, create a new file and name it with App.view.xml
+------------------------------------------------------------------------------------------------------------
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>SAP UI5 - Walkthrough</title>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_belize"
+        data-sap-ui-libs="sap.m"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-onInit="module:sap/ui/demo/walkthrough/index"
+        data-sap-ui-resourceroots='{
+            "sap.ui.demo.walkthrough": "./"
+        }'>
+    </script>
+</head>
+<body class="sapUIBody" id="content">
+    
+</body>
+</html>
+
+------------------------------------------------------------------------------------------------------------
+App.view.xml
+
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Text text="Hello UI5 Again!"/> <!-- Text Control -->
+</mvc:View>
+
+------------------------------------------------------------------------------------------------------------
+index.js
+
+sap.ui.define([
+    "sap/ui/core/mvc/XMLView"
+], function(XMLView) {
+    "use strict";
+
+    XMLView.create({
+        viewName: "sap.ui.demo.walkthrough.view.App"
+    }).then(function(oView) {
+        oView.placeAt("content");
+    });
+});
+
+------------------------------------------------------------------------------------------------------------
