@@ -1,1 +1,20 @@
+001 - In the Project Folder, create a file index.html.
 
+----------------------------------------------------------------------------
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP UI5 - Walkthrough</title>
+</head>
+<body>
+    <div>Hello UI5!</div>
+</body>
+</html>
+----------------------------------------------------------------------------
+
+002 - Lauch a Server: Terminal/ui5 serve 
+003 - Server: http://localhost:8080/index.html
