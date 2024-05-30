@@ -3,4 +3,5 @@
 002 - Install the UI5 Cli: /Terminal/npm install - global @ui5/cli
 003 - Create a package.json: /Terminal/npm init --yes
 004 - Generate the ui5.yaml file: /Terminal/ui5 init
-005 - 
+005 - In the Project Folder, create a file named manifest.json
+005 - Install Dependencies: 
