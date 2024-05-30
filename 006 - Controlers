@@ -1,17 +1,31 @@
 ----------------------------------------------------------------------------------------------------------------------------
 App.view.xml
 
-<mvc:View    
-    controllerName="sap.ui.demo.walkthrough.controller.App"                     
+<mvc:View
+    controllerName="sap.ui.core.walkthrough.controller.App"
     xmlns="sap.m" 
     xmlns:mvc="sap.ui.core.mvc">
-    
-    <!-- Button control -->
+
     <Button
-        text="Say Hi!"
+        text="Press Me"
         press=".onShowHello"
     />
 </mvc:View>
+
+<!--controllerName: This attribute specifies the controller associated with the view. 
+Here, it points to sap.ui.demo.walkthrough.controller.App, meaning that this view will use the logic defined in the App.controller.js file.
+
+xmlns="sap.m": This namespace declaration includes the SAP Mobile (sap.m) library, which provides UI5 controls optimized for mobile devices.
+
+xmlns:mvc="sap.ui.core.mvc": This namespace declaration includes the MVC (Model-View-Controller) library, which provides support for the MVC pattern in UI5.
+
+<Button>:
+
+text="Say Hi!": This attribute sets the text displayed on the button.
+
+press=".onShowHello": This event handler specifies the method to be called when the button is pressed. 
+The .onShowHello syntax indicates that the onShowHello method from the controller (App.controller.js) should be executed when this button is pressed.
+-->
 
 ----------------------------------------------------------------------------------------------------------------------------
 
@@ -34,3 +48,4 @@ sap.ui.define([
 });
 
 ----------------------------------------------------------------------------------------------------------------------------
+
