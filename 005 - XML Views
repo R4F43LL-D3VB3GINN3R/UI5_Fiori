@@ -31,11 +31,16 @@ index.html
 ------------------------------------------------------------------------------------------------------------
 App.view.xml
 
-<mvc:View
-    xmlns="sap.m"
+<mvc:View                         
+    xmlns="sap.m" 
     xmlns:mvc="sap.ui.core.mvc">
-    <Text text="Hello UI5 Again!"/> <!-- Text Control -->
+    <Text text="Hello Again"/>
 </mvc:View>
+
+<!--mvc:View is a root element for de xml view-->
+<!--xmlns="sap.m" Sap Mobile Library-->
+<!--xmlns:mvc="sap.ui.core.mvc" is the MVC Library-->
+<!--<Text text="Hello Again"/> Text Control-->
 
 ------------------------------------------------------------------------------------------------------------
 index.js
