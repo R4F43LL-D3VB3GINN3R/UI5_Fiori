@@ -1,0 +1,36 @@
+----------------------------------------------------------------------------------------------------------------------------
+App.view.xml
+
+<mvc:View    
+    controllerName="sap.ui.demo.walkthrough.controller.App"                     
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc">
+    
+    <!-- Button control -->
+    <Button
+        text="Say Hi!"
+        press=".onShowHello"
+    />
+</mvc:View>
+
+----------------------------------------------------------------------------------------------------------------------------
+
+001 - You must create a folder in webapp to your controller named controller
+002 - Then you must create a new file inside named App.controller.js
+
+----------------------------------------------------------------------------------------------------------------------------
+App.controller.js
+
+sap.ui.define([
+    "sap/ui/core/mvc/Controller"
+], function(Controller) {
+    "use strict"
+
+    return Controller.extend("sap.ui.demo.walkthrough.App", {
+        onShowHello : function() {
+            alert("Hello Again");
+        }
+    });
+});
+
+----------------------------------------------------------------------------------------------------------------------------
