@@ -57,4 +57,33 @@ sap.ui.define([
     });
 });
 
+//sap.ui.define = This is the starting point of the sap.ui.define function, which is used to define a module in SAP UI5. 
+It takes an array of dependencies and a callback function.
+
+//sap/ui/core/mvc/XMLView" = This string specifies a dependency for the module. 
+Here, it's the XMLView module from the sap.ui.core.mvc library. 
+The dependency is passed as an array.
+
+//function(XMLView) = The array of dependencies is followed by a callback function. 
+This function will be called once the specified dependencies are loaded. 
+The dependencies are passed as arguments to the callback function. 
+In this case, XMLView will be available inside this function.
+
+//"use strict" = This line ensures that the JavaScript code is executed in "strict mode", which helps catch common coding errors and "unsafe" actions such as defining global variables.
+
+//XMLView.create = The XMLView.create method is called to create a new XML view. 
+The create method takes an object as a parameter, which specifies the configuration for the view.
+
+//viewName: "sap.ui.demo.walkthrough.view.App" = This configuration object has a property viewName that specifies the name of the view to be created. 
+The view name corresponds to the path to the view file. Here, it is sap.ui.demo.walkthrough.view.App, which implies that there is an App.view.xml file under the view folder in the sap.ui.demo.walkthrough namespace.
+
+//}).then(function(oView) = The create method returns a Promise. The then method is used to handle the resolved Promise. 
+The function passed to then will be called once the view is successfully created. 
+The created view instance is passed as the parameter oView to this function.
+
+//oView.placeAt("content") = Inside the then function, the placeAt method of the view instance (oView) is called. 
+This method is used to place the view into a specific DOM element. 
+The placeAt method takes the ID of a DOM element as its argument. 
+Here, it places the view into the DOM element with the ID content.
+
 ------------------------------------------------------------------------------------------------------------
