@@ -9,9 +9,30 @@ sap.ui.define([
 
     return Controller.extend("sap.ui.demo.walkthrough.App", {
         onShowHello : function() {
-            MessageToast.show("Hello There")
+            MessageToast.show("Toastyyyy!!!")
         }
     });
 });
+
+//sap.ui.define([ ... ], function(...) { ... });: This function is used to define a new SAP UI5 module. 
+It takes an array of dependencies and a callback function that will be executed once the dependencies are loaded.
+
+//["sap/ui/core/mvc/Controller", "sap/m/MessageToast"]: The array of dependencies for this module. "sap/ui/core/mvc/Controller": 
+This is the base Controller class from the MVC library. "sap/m/MessageToast": 
+This is the MessageToast class from the SAP Mobile (sap.m) library, used to display message toasts.
+
+//function(Controller, MessageToast) { ... }: The callback function receives the loaded modules as parameters.
+
+//"use strict": This directive enables strict mode in JavaScript, which helps catch common coding errors and unsafe actions such as defining global variables accidentally.
+
+//Controller.extend("sap.ui.demo.walkthrough.App", { ... }): This function is used to create a new controller class by extending the base Controller class.
+
+//"sap.ui.demo.walkthrough.App": The name of the new controller, which should match the controller name specified in the XML view.
+
+//onShowHello : function() { ... }: This defines a method named onShowHello in the new controller. 
+This method will be called when the button's press event is triggered in the view.
+
+//MessageToast.show("Toastyyyy!!!"): This line of code displays a browser message toast with the text "Toastyyyy!!!" when the onShowHello method is called. 
+The MessageToast module is used for this purpose.
 
 ---------------------------------------------------------------------------------------------------------------------------
