@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------------------------------------------------------------
+App.view.xml
+
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.App"         
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <Button
+        text="Say Hi!"
+        press=".onShowHello"
+    />
+    <Input 
+        value="{/recipient/name}"
+        description="Hello {/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"
+    />
+</mvc:View>
+
+<!-- controllerName="sap.ui.demo.walkthrough.controller.App" = Specifies the controller associated with the view. -->
+<!-- xmlns="sap.m" - Declares the namespace for SAP Mobile (sap.m) library, which includes mobile-optimized controls. -->
+<!-- xmlns:mvc="sap.ui.core.mvc" - Declares the namespace for MVC (Model-View-Controller) library. -->
+<!-- press=".onShowHello" - Event handler for the button's press event, calls the onShowHello method from the controller. -->
+<!-- value="{/recipient/name}" - Binds the value of the input field to the name property in the model. -->
+<!-- description="Hello {/recipient/name}" - Sets the description text, displaying a greeting with the bound name. -->
+<!-- valueLiveUpdate="true" - Updates the model with every keystroke in the input field. -->
+<!-- width="60%" - Sets the width of the input field to 60% of the available space. -->
+
+------------------------------------------------------------------------------------------------------------------------------------
+App.controller.js
+
+sap.ui.define([
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast",
+    "sap/ui/model/json/JSONModel"
+], function(Controller, MessageToast, JSONModel) {
+    "use strict"
+
+    return Controller.extend("sap.ui.demo.walkthrough.App", {
+
+        onInit : function() {
+            var oData = {
+                recipient : {
+                    name : "UI5"
+                }
+            };
+            var oModel = new JSONModel(oData);
+            this.getView().setModel(oModel);
+        },
+        onShowHello : function() {
+            MessageToast.show("Toastyyyy!!!") 
+        }
+    });
+});
+
+------------------------------------------------------------------------------------------------------------------------------------
