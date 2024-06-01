@@ -54,4 +54,19 @@ sap.ui.define([
     });
 });
 
+//"sap/ui/core/mvc/Controller" = Loads the base Controller class from the MVC library.
+//"sap/m/MessageToast" = Loads the MessageToast class from the SAP Mobile library for showing message toasts.
+//"sap/ui/model/json/JSONModel" = Loads the JSONModel class for creating and managing data models.
+//function(Controller, MessageToast, JSONModel) = Callback function to receive the loaded modules.
+//"use strict" = Enables strict mode to catch common coding errors.
+//return Controller.extend("sap.ui.demo.walkthrough.App" = Creates a new controller class by extending the base Controller.
+//onInit: function() = Method called when the controller is initialized.
+//var oData = Defines the data structure for the model.
+//recipient = An object with recipient details.
+//name: "UI5" = The name property with a default value of "UI5".
+//var oModel = new JSONModel(oData); = Creates a new JSON model with the defined data.
+//this.getView().setModel(oModel); = Sets the created model to the current view.
+//onShowHello: function() = Method called when the "Say Hi!" button is pressed.
+//MessageToast.show("Toastyyyy!!!"); = Shows a message toast with the text "Toastyyyy!!!".
+
 ------------------------------------------------------------------------------------------------------------------------------------
