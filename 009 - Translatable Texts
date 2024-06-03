@@ -66,4 +66,16 @@ App.view.xml
     />
 </mvc:View>
 
+<!--controllerName="sap.ui.demo.walkthrough.controller.App": Name of the controller associated with the view.-->
+<!--xmlns="sap.m": Namespace for the SAPUI5 Mobile (sap.m) library controls.-->
+<!--xmlns="sap.ui.core.mvc": Namespace for the MVC (Model-View-Controller) library.-->
+<!--<Button ... />: Defines a button in the view.-->
+<!--text="{i18n>showHelloButtonText}": Binds the button text to the showHelloButtonText key in the i18n model.-->
+<!--press=".onShowHello": Sets the event handler for the press event, calling the onShowHello method.-->
+<!--<Input ... />: Defines an input field in the view.-->
+<!--value="{/recipient/name}": Binds the value of the input field to the /recipient/name property in the JSON model.-->
+<!--description="Hello {/recipient/name}": Sets a description for the input field.-->
+<!--valueLiveUpdate="true": Updates the value in real-time as the user types.-->
+<!--width="60%": Sets the width of the input field.-->
+
 ------------------------------------------------------------------------------------------------------------
