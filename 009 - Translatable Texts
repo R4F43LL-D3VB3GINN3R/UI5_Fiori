@@ -46,6 +46,21 @@ sap.ui.define([
     });
 });
 
+//sap.ui.define([...], function(Controller, MessageToast, JSONModel, ResourceModel) {...}): Defines the SAPUI5 module and imports the necessary dependencies.
+//"use strict";: Enables strict mode in JavaScript for better error checking.
+//return Controller.extend("sap.ui.demo.walkthrough.App", {...}): Extends the base Controller class to create a new controller.
+//onInit : function() {...}: Initialization method of the controller.
+//var oData = {...}: Defines the initial data for the JSON model.
+//var oModel = new JSONModel(oData);: Creates a new JSON model with the data.
+//this.getView().setModel(oModel);: Sets the JSON model on the view.
+//var i18nModel = new ResourceModel({...});: Creates a new resource model for internationalization.
+//this.getView().setModel(i18nModel, "i18n");: Sets the i18n resource model on the view with the name "i18n".
+//onShowHello : function() {...}: Method called when the button is pressed.
+//var oBundle = this.getView().getModel("i18n").getResourceBundle();: Gets the resource bundle from the i18n model.
+//var sRecipient = this.getView().getModel().getProperty("/recipient/name");: Gets the value of the /recipient/name property from the JSON model.
+//var sMsg = oBundle.getText("helloMsg", [sRecipient]);: Gets the greeting message from the resource bundle, replacing the {0} placeholder with the recipient's name.
+//MessageToast.show(sMsg);: Displays the message in a MessageToast.
+
 ------------------------------------------------------------------------------------------------------------
 App.view.xml
 
