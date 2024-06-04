@@ -76,14 +76,14 @@ sap.ui.define([
     "sap/ui/core/ComponentContainer"
 ], function(ComponentContainer) {
     "use strict";
-
+    // Create a new ComponentContainer
     new ComponentContainer({
-        name: "sap.ui.demo.walkthrough",
+        name: "sap.ui.demo.walkthrough", // Name of the component to instantiate
         settings: {
-            id: "walkthrough"
+            id: "walkthrough" // ID for the ComponentContainer
         },
-        async: true
-    }).placeAt("content");
+        async: true // Load the component asynchronously
+    }).placeAt("content"); // Place the ComponentContainer at the "content" DOM element
 });
 
 ----------------------------------------------------------------------------------------------------------------
