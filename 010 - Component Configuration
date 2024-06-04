@@ -52,18 +52,22 @@ sap.ui.define([
     "sap/ui/model/resource/ResourceModel"
 ], function(Controller, MessageToast, JSONModel, ResourceModel) {
     "use strict"
-
+    // Controller definition
     return Controller.extend("sap.ui.demo.walkthrough.App", {
+        // Event handler for the "Show Hello" button
         onShowHello : function() {
-
+            // Get the i18n resource bundle
             var oBundle = this.getView().getModel("i18n").getResourceBundle();
+            // Get the recipient name from the model
             var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+            // Get the translated message text
             var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-
+            // Show the message in a toast
             MessageToast.show(sMsg);
         }
     });
 });
+
 
 ----------------------------------------------------------------------------------------------------------------
 index.js
