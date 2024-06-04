@@ -34,20 +34,294 @@ sap.ui.define([
     "use strict";
 
     XMLView.create({
-        viewName: "sap.ui.demo.walkthrough.view.App"
+        viewName: "sap.ui.demo.walkthrough.view.View1"
     }).then(function(oView) {
         oView.placeAt("content");
     });
 });
 
 --------------------------------------------------------------------------------------------------------------------
-App.controller.js
+manifest.json
 
-sap.ui.define([
-
-]);
+{
+    "_version": "1.1.0",
+    "start_url": "<startUrl>",
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "<id>",
+        "type": "application",
+        "i18n": "<i18nPathRelativeToManifest>",
+        "applicationVersion": {
+            "version": "<version>"
+        },
+        "title": "{{<title>}}",
+        "tags": {
+            "keywords": [
+                "{{<keyword1>}}", "{{<keyword2>}}"
+            ]
+        },
+        "dataSources": {
+            "<dataSourceAlias>": {
+                "uri": "<uri>",
+                "settings": {
+                    "localUri": "<localUri>"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "icons": {
+            "icon": "<icon>",
+            "favIcon": "<favIcon>",
+            "phone": "<phone>",
+            "phone@2": "<phone@2>",
+            "tablet": "<tablet>",
+            "tablet@2": "<tablet@2>"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "resources": {
+            "js": [
+                {
+                    "uri": "<uri>"
+                }
+            ],
+            "css": [
+                {
+                    "uri": "<uri>",
+                    "id": "<id>"
+                }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "<minUI5Version>",
+            "libs": {
+                "<ui5lib1>": {                   
+                    "minVersion": "<minVersion1>"
+                },
+                "<ui5lib2>": {                   
+                    "minVersion": "<minVersion2>"
+                }
+            },
+            "components": {
+                "<ui5component1>": {
+                    "minVersion": "<minComp1Version>"
+                }
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "<uriRelativeToManifest>"
+            },
+            "": {
+                "dataSource": "<dataSourceAlias>",
+                "settings": {}
+            }
+        },
+        "rootView": {
+            "viewName": "view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "sap.ui.demo.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "name": "RouteView1",
+                    "pattern": ":?query:",
+                    "target": "TargetView1"
+                },
+                {
+                    "name": "RouteView2",
+                    "pattern": "view2",
+                    "target": "TargetView2"
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View1",
+                    "viewName": "View1"
+                },
+                "TargetView2": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View2",
+                    "viewName": "View2"
+                }
+            }
+        },
+        "extends": {
+            "component": "<extendedComponentId>",
+            "minVersion": "<minComp1Version>",
+            "extensions": {}
+        },
+        "contentDensities": {
+            "compact": false,
+            "cozy": false
+        }
+    },
+    "sap.platform.abap": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    },
+    "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    }
+}
 
 --------------------------------------------------------------------------------------------------------------------
+App.view.xml
 
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
 
--
+    <Panel headerText="Form">
+        <FlexBox
+            height="auto" 
+            direction="Column" 
+            alignItems="Center" 
+            justifyContent="Center"> 
+            <Text text="Name"/>
+            <Input id="in1" placeholder="Enter your text here..." width="100%"/>
+            <Text text="Age"/>
+            <Input id="in2" placeholder="Enter your text here..." width="100%"/>
+            <Text text="Job"/>
+            <Input id="in3" placeholder="Enter your text here..." width="100%"/>
+            <Button text="Save" press=".showMsg"/>
+        </FlexBox>
+    </Panel>
+</mvc:View>
+
+--------------------------------------------------------------------------------------------------------------------
+View1.view.xml
+
+<mvc:View
+    controllerName="webapp.controller.View1"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <Page id="page" title="TitleMenu">
+        <content>
+            <Button id="_IDGenButton1aa" text="Register" press="myScreen"></Button>
+        </content>
+    </Page>
+</mvc:View>
+--------------------------------------------------------------------------------------------------------------------
+View2.view.xml
+
+<mvc:View
+    controllerName="webapp.controller.View2"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <Page id="page" title="TitleMenu">
+        <content>
+            <Button id="_IDGenButton1aa1" text="Login" press="myScreen1"></Button>
+        </content>
+    </Page>
+</mvc:View>
+--------------------------------------------------------------------------------------------------------------------
+Ãpp.controller.js
+
+sap.ui.define([
+    "sap/ui/core/mvc/Controller"
+], function (Controller) {
+    "use strict";
+
+    return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
+        onInit: function () {
+            
+        },
+        showMsg : function () {
+
+            var input1 = this.getView().byId("in1").getValue();
+            var input2 = this.getView().byId("in2").getValue();
+            var input3 = this.getView().byId("in3").getValue();
+
+            alert(input1 + " " + input2 + " " + input3);
+        }
+    });
+});
+
+--------------------------------------------------------------------------------------------------------------------
+View1.controller.js
+
+sap.ui.define([
+	"sap/ui/core/mvc/Controller"
+
+], 
+
+    /**
+     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     */
+
+    function(Controller) {
+        "use strict";
+
+        return Controller.extend("controller.View1", {
+
+            inInit : function () {
+
+            },
+            myScreen : function() {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("RouteView2", {});
+            }
+        });
+    });
+
+--------------------------------------------------------------------------------------------------------------------
+View2.controller.js
+
+sap.ui.define([
+	"sap/ui/core/mvc/Controller"
+
+], 
+
+    /**
+     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     */
+
+    function(Controller) {
+        "use strict";
+
+        return Controller.extend("controller.View2", {
+
+            inInit : function () {
+
+            },
+            myScreen : function() {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("RouteView1", {});
+            }
+        });
+    });
+
+--------------------------------------------------------------------------------------------------------------------
