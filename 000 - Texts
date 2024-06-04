@@ -131,7 +131,7 @@ manifest.json
             }
         },
         "rootView": {
-            "viewName": "view.App",
+            "viewName": "sap.ui.demo.walkthrough.view.App",
             "type": "XML",
             "async": true,
             "id": "App"
@@ -148,7 +148,7 @@ manifest.json
             "routes": [
                 {
                     "name": "RouteView1",
-                    "pattern": ":?query:",
+                    "pattern": "",
                     "target": "TargetView1"
                 },
                 {
@@ -175,7 +175,7 @@ manifest.json
             }
         },
         "extends": {
-            "component": "<extendedComponentId>",
+            "component": "sap.ui.demo.walkthrough",
             "minVersion": "<minComp1Version>",
             "extensions": {}
         },
@@ -223,13 +223,13 @@ App.view.xml
 View1.view.xml
 
 <mvc:View
-    controllerName="webapp.controller.View1"
+    controllerName="sap.ui.demo.walkthrough.controller.View1"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true">
     <Page id="page" title="TitleMenu">
         <content>
-            <Button id="_IDGenButton1aa" text="Register" press="myScreen"></Button>
+            <Button id="buttonRegister" text="Register" press="myScreen" />
         </content>
     </Page>
 </mvc:View>
@@ -237,13 +237,13 @@ View1.view.xml
 View2.view.xml
 
 <mvc:View
-    controllerName="webapp.controller.View2"
+    controllerName="sap.ui.demo.walkthrough.controller.View2"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true">
     <Page id="page" title="TitleMenu">
         <content>
-            <Button id="_IDGenButton1aa1" text="Login" press="myScreen1"></Button>
+            <Button id="_IDGenButton1aa1" text="Login" press="myScreen1" />
         </content>
     </Page>
 </mvc:View>
@@ -285,7 +285,7 @@ sap.ui.define([
     function(Controller) {
         "use strict";
 
-        return Controller.extend("controller.View1", {
+        return Controller.extend("sap.ui.demo.walkthrough.controller.View1", {
 
             inInit : function () {
 
@@ -312,7 +312,7 @@ sap.ui.define([
     function(Controller) {
         "use strict";
 
-        return Controller.extend("controller.View2", {
+        return Controller.extend("sap.ui.demo.walkthrough.controller.View2", {
 
             inInit : function () {
 
