@@ -9,9 +9,10 @@ sap.ui.define([
     "sap/ui/model/resource/ResourceModel"
 ], function (UIComponent, JSONModel, ResourceModel) {
     "use strict";
-
+    // Component definition
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
         metadata : {
+            // Root view configuration
             rootView: {
                 "viewName": "sap.ui.demo.walkthrough.view.App",
                 "type": "XML",
@@ -30,7 +31,7 @@ sap.ui.define([
             };
             var oModel = new JSONModel(oData);
             this.setModel(oModel);
-            // set the i18n Model
+            // Set the i18n model for internationalization
             var i18nModel = new ResourceModel({
                 bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
                 supportedLocales: [""],
