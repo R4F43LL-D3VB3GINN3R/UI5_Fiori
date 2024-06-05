@@ -155,4 +155,15 @@ index.html
 </html>
 
 --------------------------------------------------------------------------------------
+i18n.properties
+
+# App Descriptor
+appTitle = Hello UI5 App
+AppDescription = A simple test app to learn UI5
+
+# Hello Panel
+showHelloButtonText=HiUi5
+helloMsg=Hello {0}
+
+--------------------------------------------------------------------------------------
 
